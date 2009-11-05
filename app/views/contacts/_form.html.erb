@@ -1,0 +1,44 @@
+<% form_for(@contact, :html => { :multipart => true }) do |f| %>
+
+    <div id="field1">    
+    
+    <%= label :contact, :title %>
+    <%= f.text_field :title %>
+
+    <%= label :contact, :first_name %>
+    <%= f.text_field :first_name %>
+
+    <%= label :contact, :mid_init %>
+    <%= f.text_field :mid_init %>
+ 
+    <%= label :contact, :last_name %>
+    <%= f.text_field :last_name %>
+  
+    </div>
+    
+    <div id="field2">
+
+    <%= label :contact, :company %>
+    <%= f.text_field :company %>
+  
+    <%= label :contact, :phone %>
+    <%= f.text_field :phone %>
+  
+    <%= label :contact, :email %>
+    <%= f.text_field :email %>
+
+     <%= label :contact, :logo %>
+    <%= file_field_tag :logo_file %>
+	<span class="hint">
+  		We accept JPEG, GIF, or PNG files up to 500 KB.
+	</span>
+    </div>
+ 
+        
+    <div id="controls">
+         <%= f.text_field :occupation_id, :value => params[:occupation_id] %>
+        <p>
+	    <%= submit_tag button_label, :class => "contact_button" %>
+	    </p>
+    </div>
+<% end %>

@@ -1,0 +1,31 @@
+<table>
+    <% for contact in @tour.contacts -%>
+    <tr>
+        <th><%=h contact.occupation.occupation %>:</th>
+		<td><%=h contact.title + ' ' + contact.first_name + ' ' + contact.mid_init + ' ' + contact.last_name %></td>
+    </tr>
+    <% end -%>
+</table>
+
+<p>
+  <b>Tour date:</b>
+  <%=h @tour.tour_date %>
+</p>
+
+<p>
+    <b>Tour area:</b>
+    <%=h @tour.area_id %>
+</p>
+
+<p>
+    <b>Area Description:</b>
+    <%=h @tour.area.name %>
+</p>
+
+<p>
+  <b>Tour name:</b>
+  <%=h @tour.tour_name %>
+</p>
+
+<%= link_to 'Edit', edit_tour_path(@tour) %> |
+<%= link_to 'Back', tours_path %>

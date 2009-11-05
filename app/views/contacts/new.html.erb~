@@ -1,0 +1,11 @@
+<%= error_messages_for :contact, :logo %>
+ 
+<fieldset id="contacts">
+  <legend>New Contact</legend>
+ 
+  <%= render :partial => 'form', :locals => 
+		{ :button_label => 'Enter Contact', :contact => @contact } %>
+ 
+</fieldset>
+    <%= link_to "Finished" new_tour_path %>
+

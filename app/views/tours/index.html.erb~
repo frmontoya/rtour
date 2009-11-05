@@ -1,0 +1,25 @@
+<h5>Listing tours</h5>
+
+<table>
+
+<% for tour in @tours -%>
+  <tr>
+	<td colspan=3><hr /></td>
+	<tr>   
+			<th>Tour Name:</th>
+		<td><%=h tour.tour_name %></td>
+		<td><%= link_to 'Show', tour %></td>
+	</tr>
+	<tr>
+		<th>Tour Date:</th>    	
+    	<td><%=h tour.tour_date%></td>
+		<td><%= link_to 'Edit', edit_tour_path(tour) %></td>
+	</tr>
+    <tr>
+        <th>Tour Area</th>
+        <td><%=h tour.area.name %>
+        <td><%= link_to 'Destroy', tour, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  </tr>
+<% end -%>
+</table><td><%= link_to 'Destroy', tour, :confirm => 'Are you sure?', :method => :delete %></td>

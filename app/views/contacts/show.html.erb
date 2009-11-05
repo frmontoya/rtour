@@ -1,0 +1,53 @@
+<p>
+  <b>Title:</b>
+  <%=h @contact.title %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%=h @contact.first_name %>
+</p>
+
+<p>
+  <b>Mid init:</b>
+  <%=h @contact.mid_init %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @contact.last_name %>
+</p>
+
+<p>
+  <b>Occupation:</b>
+  <%=h @contact.occupation.occupation %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @contact.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @contact.email %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%=h @contact.company %>
+</p>
+
+<p>
+  <b>Logo:</b>
+  <%= logo_for(@contact, :small) %>
+</p>
+
+
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<% if @return_url -%>
+<%= link_to "Finished", :action => 'new' , :tour_id => @return_url, :controller => 'properties' %>
+<% else %>
+<%= link_to "Finished", new_tour_path %>
+<% end -%>  |  
+<%= link_to 'Back', contacts_path %>

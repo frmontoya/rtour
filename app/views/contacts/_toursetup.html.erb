@@ -1,0 +1,31 @@
+<p>
+    <label for="agent_contact_id">Agent Requested Tour</label>
+    <%= select_tag "agent[contact_id]", 
+         %{<option value="">--Select an Agent</option>}, :disabled => true %> 
+</p> 
+<p> 
+    <label for="eofficer_contact_id">Escrow Officer</label>
+     <%= select_tag "eofficer[contact_id]", 
+         %{<option value="">--Select an Escrow Officer</option>},  :disabled => true %> 
+</p>
+
+<p>
+    <label for="lofficer_contact_id">Loan Officer</label>
+    <%= select_tag "lofficer[contact_id]", 
+         %{<option value="">--Select an Loan Officer</option>}, :disabled => true %>
+</p>
+<p>
+    <%= form.label :area_id %>    
+    <%= select_tag "tour[area_id]", 
+         %{<option value="">--Select an Area</option>}, :disabled => true %>
+</p>
+<p>
+	<%= form.label :tour_date %>
+	<%= calendar_date_select_tag "tour[tour_date]" %>
+</p>
+<p> 
+	<%= form.label :tour_name %>
+    <%= form.text_field :tour_name, :disabled => true %>
+</p>
+<%= submit_tag button_label, :class => "submit", :disabled => true  %>
+

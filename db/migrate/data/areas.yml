@@ -1,0 +1,153 @@
+area10:
+    name: Area 10 Tour
+    location_id: 225874259
+area20:
+    name: Area 20-21 Tour
+    location_id: 225874259
+area30:
+    name: Area 30-32 Tour
+    location_id: 225874259
+area40:
+    name: Area 40-42 Tour
+    location_id: 225874259
+area50:
+    name: Area 50-51 Tour
+    location_id: 225874259
+area60:
+    name: Area 60 Four Hills Tour
+    location_id: 225874259
+area70:
+    name: Area 70-71 Tour
+    location_id: 225874259
+area80:
+    name: Area 80 Downtown Tour
+    location_id: 225874259
+area90:
+    name: Area 90-92 Tour
+    location_id: 225874259
+area93:
+    name: Area 93 Pajarito Tour
+    location_id: 225874259
+area100:
+    name: Area 100-101 Tour
+    location_id: 225874259
+area102:
+    name: Area 102-103 Tour
+    location_id: 225874259
+area110:
+    name: Area 110-111 Tour
+    location_id: 225874259
+area120:
+    name: Area 120-121 Tour
+    location_id: 225874259
+area130:
+    name: Area 130 Corrales Tour
+    location_id: 978346437
+area140:
+    name: Area 140 Rio Rancho South Tour
+    location_id: 978346437
+area141:
+    name: Area 141 Rio Rancho Southwest Tour
+    location_id: 978346437
+area150:
+    name: Area 150-151 Tour
+    location_id: 978346437
+area160:
+    name: Area 160-161 Tour
+    location_id: 978346437
+area170:
+    name: Area 170 Bernalillo/Algodones Tour
+    location_id: 978346437
+area180:
+    name: Area 180 Placitas Tour
+    location_id: 978346437
+area190:
+    name: Area 190 San Ysidro/Jemez Springs Tour
+    location_id: 978346437
+area200:
+    name: Area 200 Sandoval County Tour
+    location_id: 978346437
+area620:
+    name: Area 620 North Socorro Tour
+    location_id: 598836961
+area621:
+    name: Area 621 South Socorro Tour
+    location_id: 598836961
+area690:
+    name: Area 690 West Valencia County Tour
+    location_id: 598836961
+area700:
+    name: Area 700 Los Lunas Tour
+    location_id: 598836961
+area701:
+    name: Area 701 West Los Lunas Tour
+    location_id: 598836961
+area710:
+    name: Area 710 Bosque & Peralta Tour
+    location_id: 598836961
+area711:
+    name: Area 711 East Los Lunas, Torne & Valencia Tour
+    location_id: 598836961
+area720:
+    name: Area 720 Meadow Lake & El Cerro Mission Tour
+    location_id: 598836961
+area721:
+    name: Area 721 Las Maravillas & Monterrey Park Tour
+    location_id: 598836961
+area730:
+    name: Area 730 West Belen Tour
+    location_id: 598836961
+area740:
+    name: Area 740 Los Chavez Tour
+    location_id: 598836961
+area741:
+    name: Area 741 Belen Tour
+    location_id: 598836961
+area742:
+    name: Area 742 Jarales & Bosque Tour
+    location_id: 598836961
+area750:
+    name: Area 750 Adelino Tour
+    location_id: 598836961
+area760:
+    name: Area 760 Rio Communities & Tierra Grande Tour
+    location_id: 598836961
+area210:
+    name: Area 210 Carmuel & Monticello Tour
+    location_id: 130192060
+area220:
+    name: Area 220 North of I-40 Tour
+    location_id: 130192060
+area230:
+    name: Area 230 South of I-40 Tour
+    location_id: 130192060
+area231:
+    name: Area 231 Manzano Mountain Tour
+    location_id: 130192060
+area240:
+    name: Area 240 Zuzax, & Tijeras Tour
+    location_id: 130192060
+area250:
+    name: Area 250 Northwest Edgewood Tour
+    location_id: 130192060
+area260:
+    name: Area 260 South 217 Tour
+    location_id: 130192060
+area270:
+    name: Area 270 Northeast Edgewood Tour
+    location_id: 130192060
+area271:
+    name: Area 271 Stanley Tour
+    location_id: 130192060
+area280:
+    name: Area 280 Southwest Edgewood Tour
+    location_id: 130192060
+area290:
+    name: Area 290 North Moriarty Tour
+    location_id: 130192060
+area292:
+    name: Area 292 Estancia, Mcintosh, & Willard Tour
+    location_id: 130192060
+area293:
+    name: Area 293 Mountainair Tour
+    location_id: 130192060

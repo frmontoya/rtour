@@ -1,0 +1,164 @@
+﻿* 
+{
+	margin:0;
+	padding:0;
+}
+
+body
+{
+	font: 1em Lucida, Arial, sans-serif; /* 1em = 16pts */
+}
+
+body {background-color:#FFF;}
+#main {background-color:#FFF;}
+div#banner
+{
+	background-color:#f7d406;	
+	/*background: url(../../images/goldBalloon.gif) repeat-x #f7d406;*/
+}
+#nav {background-color:#BFBFAC;}
+#navigation {background-color:#BFBFAC;}
+#content {background-color:#FFFFE6;}
+#contentarea {background-color:#FFFFE6;}
+#footer {background-color:#f7d406;}
+#register {background-color:#808073;}
+#floor {background-color:#808073;}
+div#floor {background-color:#808073}
+
+
+/* FONT SIZES */
+h1 {font-size:1.5em; /* 24pt */
+	}
+h2 {font-size:1.375em; /* 22pt */
+	line-height:1.25;
+	padding:.5em 0 .5em .5em;	
+	}
+h3 {font-size:1.125em; /* 18pt */
+	line-height:1.25;
+	}
+h4 {font-size:1.125em; /* 18pt */
+	}
+h5 {font-size:1em; /* 16pt */
+	}
+h6 {font-size:.875em; /* 14pt */
+	}
+p, .hint{
+	font-size:.8em; /* 12pt */
+	line-height:1.25; /* on 15pt */
+	margin-bottom:.75em; /* 12pts of space */
+ 	}
+ 	
+#content_inner ul, dl, ol {
+		margin:0 1em .75em 1em; /* lists without specific classes */
+		font-size:.8em;
+		line-height:1.5;}
+#content_inner li, dd {
+		padding:0em 0; /* lists without specific classes */
+		margin-left:2em; 
+		}
+#floor{
+        font-size: .5em;
+}
+
+a:hover {
+	text-decoration:none;
+	}
+	
+#nav ul, #nav dl, #nav ol {
+		font-size:.8em;
+		}
+#nav li {
+	list-style-type:none;
+	margin-left:0
+	}	
+
+#nav_menu ul, #nav dl, #nav ol {
+	font-size: .6em
+		}
+#nav_menu li {
+	list-style-type:none;
+	margin-left:0
+	}
+div#register
+{
+	border: none;
+	font-family: Arial, Sans-Serif; /* background-color: #000080; */
+    font-size: .8em;
+}
+#register form
+{
+	margin-left: 0;
+	color: #f7d406;
+} 
+#register form span
+{
+}  
+input
+{
+	font-size:.8em;
+}
+label
+{
+	display:block;
+	clear:both;
+	font-size:100%;
+	font-weight:bold;
+	margin:.2em 0 0 ;
+	padding-bottom:.2em;
+}
+#floor
+{
+	background-color: #808073;
+}
+.credit
+{
+	font-size: 50%;
+	font-style: italic;
+}
+
+table.basic_lines
+{
+    width: 450px;
+    border-top: 3px solid #069;
+    border-collapse: collapse;
+    border-left: 2px solid #069;
+    border-right: 2px solid #069;
+    border-bottom: 2px solid #069;
+    font-size:.6em; /* 12pt */
+	line-height:1.25; /* on 15pt */
+	margin-bottom:.75em;
+}
+table.basic_lines caption
+{
+	margin-bottom:6px;
+	font-weight:bold
+}
+table.basic_lines th
+{
+	border-bottom: 2px solid #069;
+}
+table.basic_lines td
+{
+	border-bottom: 1px solid #069;
+	text-align: left;
+}
+table.basic_lines td, table.basic_lines th
+{
+	padding: 2px 1px;
+}
+table.basic_lines td
+{
+	border-right: 1px solid #9cc;
+}
+table .list_line_odd
+{
+    background-color:#DED;
+}
+.pagination{
+    float: right;
+    font-size: .8em;
+}
+select
+{
+    font-size:.8em;
+}

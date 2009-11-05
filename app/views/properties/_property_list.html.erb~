@@ -1,0 +1,29 @@
+
+<table class="basic_lines">
+    <caption>Listed Properties</caption> 
+    <tr>    
+        <th scope="col">Area</th>
+        <th scope="col">Address</th>
+        <th scope="col">MLS</th>
+        <th scope="col">Agent</th>
+        <th scope="col">Price</th>
+        <th scope="col">&nbsp;</th>
+    </tr>
+<% for property in @properties %>
+    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+            <td><%=h property.area.name %></td> 
+            <td><%= simple_format(sanitize(property.address)) %></td>
+            <td><%= property.mls %></td>
+            <td><%=h property.contact.title + " " + property.contact.first_name + " " + property.contact.mid_init + " " +  property.contact.last_name %></td>
+            <td>
+                <div class="price-line">
+                    <span class="price"><%= number_to_currency(property.price) %></span>
+                </div>
+            </td>
+            <td><p><%= link_to "Edit", :action => 'edit', :tour_id => property.tour_id, :controller => 'properties', :id => property.id %><br />
+                   <%= link_to "Destroy", :action => 'destroy', :tour_id => property.tour_id, :controller => 'properties', :id => property.id, :confirm => 'Are you sure?', :method => :delete %>
+            </p></td> 
+    </tr>
+<% end -%>
+</table>
+<%= will_paginate @properties %>

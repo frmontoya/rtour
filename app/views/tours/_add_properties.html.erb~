@@ -1,0 +1,24 @@
+<div class="listed-form" style="height:175px;">
+	<%= error_messages_for 'property' %>
+<% form_for :property, :url => { :action => :save_property } do |form| %>
+	<h3>Add Listed Properties</h3>
+  <div id="field1">
+	<%= collection_select(:contact, :id, @agents, :id, :first_name, options = {:prompt => "--Select an Agent"}) %>
+  </div>
+  <div id="field2">
+	<%= form.label :address %>
+    <%= form.text_area :address, :rows => 6 %>
+  </div>
+  <div id="field3">  
+	<%= form.label :mls %>
+    <%= form.text_field :mls %>
+  </div>
+  <div id="field4">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+  <div id="field5">
+    <%= submit_tag "Enter Property", :class => "submit" %>
+  </div>
+<% end %>
+</div>

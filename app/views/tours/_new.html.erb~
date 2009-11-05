@@ -1,0 +1,19 @@
+<h1>New tour</h1>
+
+<% form_for(@tour) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :tour_name %><br />
+    <%= f.text_field :tour_name %>
+  </p>
+  <p>
+    <%= f.label :tour_date %><br />
+    <%= f.datetime_select :tour_date %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', tours_path %>

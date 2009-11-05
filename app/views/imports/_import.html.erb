@@ -1,0 +1,13 @@
+<!-- form_remote_tag :html => { :action =>
+    url_for(:controller => "imports", :action => "new", :multipart => true) } do |f| -->
+
+<% form_for @import, :html => { :multipart => true } do |f| %>
+
+  <%= f.file_field :csv %>
+<select name="import[datatype]" size="1">
+  <option value="contacts">Contacts</option>
+  </select>
+
+    <%= f.submit "Import" %>
+
+<% end %>

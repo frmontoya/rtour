@@ -1,0 +1,24 @@
+<table class="basic_lines">
+    <caption>Tours</caption> 
+    <tr>    
+        <th scope="col">Area</th>
+        <th scope="col">Agent</th>
+        <th scope="col">Tour Date</th>
+        <th scope="col">&nbsp;</th>
+    </tr>
+<% for tour in @tours -%>
+    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+            <td><%=h tour.area.name %></td>
+            <% for contact in tour.contacts %>
+                <% if contact.occupation.occupation == 'Agent' -%>
+                    <td><%=h contact.title + " " + contact.first_name + " " + contact.mid_init + " " + contact.last_name %></td>
+                <% end -%>
+            <% end %>
+            <td><%= tour.tour_date.to_formatted_s(:long) %></td>
+            <td><p><%= link_to "Edit", :action => 'edit', :tour_id => tour.id, :controller => 'tours', :id => tour.id, :page => 1 %><br />
+                   <!-- link_to "Destroy", :action => 'destroy', :tour_id => property.tour_id, :controller => 'properties', :id => property.id, :confirm => 'Are you sure?', :method => :delete -->
+            </p></td> 
+    </tr>
+<% end -%>
+</table>
+

@@ -1,0 +1,21 @@
+<fieldset>
+  <legend>Help</legend>
+ 
+<p>
+  If you have forgotten your password, enter your name below and click the "Recover My Account" button.<br />
+  <br />
+  An email will be sent with a link to your address on record. Click this link to login and change your password.<br />
+  <br />
+  The link given will no longer function after your password is changed. 
+</p>
+ 
+<% form_tag recover_people_path, :method => :post do %>
+ 
+  <label for="person_name">Name:</label><br />
+  <%= text_field_tag :name %><br />
+ 
+  <%= submit_tag "Recovery My Account" %>
+ 
+<% end %>
+ 
+</fieldset>

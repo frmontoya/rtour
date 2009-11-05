@@ -1,0 +1,2 @@
+class OccupationsController < ApplicationController
+end

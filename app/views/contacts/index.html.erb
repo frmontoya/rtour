@@ -1,0 +1,27 @@
+<h5>Listing contacts</h5>
+
+<table>
+
+<% for contact in @contacts -%>
+  <tr>
+	<td rowspan=4><%= logo_for(contact, :small) %></td>	
+	<td colspan=3><hr /></td>
+	<tr>    
+			<th>Name/Occupation:</th>
+		<td><%=h contact.title + ' ' + contact.first_name + ' ' + contact.mid_init + ' ' + contact.last_name + ' / ' + contact.occupation.occupation %></td>
+		<td><%= link_to 'Show', contact %></td>
+	</tr>
+	<tr>
+		<th>Phone/Email:</th>    	
+    	<td><%=h contact.phone + ' / ' + contact.email%></td>
+		<td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+	</tr>
+	<tr>
+		<th>Company:</th>
+		<td><%=h contact.company %></td>
+		<td><%= link_to 'Destroy', contact, :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+  </tr>
+<% end -%>
+</table>
+

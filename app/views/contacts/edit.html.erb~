@@ -1,0 +1,12 @@
+<%= error_messages_for :contact, :logo %>
+ 
+<fieldset>
+  <legend>Update Contact</legend>
+ 
+  <%= render :partial => 'form', :locals => 
+		{ :button_label => 'Update', :contact => @contact} %>
+ 
+</fieldset>
+
+<%= link_to 'Show', @contact %> |
+<%= link_to 'Back', contacts_path %>

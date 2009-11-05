@@ -1,0 +1,6 @@
+agent:
+	occupation: Agent
+escrowOfcr:
+	occupation: Escrow Officer
+loanofcr:
+	occupation: Loan Officer

@@ -1,0 +1,2 @@
+<h2>Upload a CSV file to import into the database</h2>
+<%= render :partial => 'import' %>

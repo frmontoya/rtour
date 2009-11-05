@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  is_owner: false
+  first_name: MyString
+  mid_init: MyString
+  last_name: MyString
+  title: MyString
+  company: MyString
+  phone: MyString
+  email: MyString
+  logo: MyString
+  occupation: MyString
+
+two:
+  is_owner: false
+  first_name: MyString
+  mid_init: MyString
+  last_name: MyString
+  title: MyString
+  company: MyString
+  phone: MyString
+  email: MyString
+  logo: MyString
+  occupation: MyString

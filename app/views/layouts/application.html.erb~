@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html>
+<head>
+  <title>Realtor Tours - <%= yield (:title) || "Real Estate Tours" %></title>
+  <%= stylesheet_link_tag "tours", :media => "all" %>
+  <%= stylesheet_link_tag "text_n_colors", :media => "all" %>
+   <%= stylesheet_link_tag "niftyCorners", :media => "all" %>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "niftycube" %>
+</head>
+ 
+<body id="tours">
+  <div id="main"
+  	<div id="banner">
+    	<%= image_tag("logo.png") %><h1>Real Estate Tours</h1> 
+		<h2><%= yield (:title) || "Real Estate Tours" %></h2>
+    </div> <!-- end banner -->
+	<div id="threecolwrap">
+		<div id="twocolwrap">
+  			<div id="column">
+  				<div id="side">	 
+					<% if @user %>
+						<ul>
+    						<li><%= link_to "Edit Account", edit_person_path('account') %></li>
+    						<li><%= link_to "Logout", @application_session, :method => :delete %></li>
+						</ul>
+  					<% else %>
+						<ul>
+   							<li><%= link_to "Login", new_session_path %></li>
+    						<li><%= link_to "Register", new_person_path %></li>
+							<li><%= link_to "Help", help_people_path %></li>
+						</ul>
+  					<% end %>
+  				</div> <!-- end side -->
+  			</div> <!-- end column -->
+  			<div id="content"
+				<div id="main_inner">
+
+  <%= link_to "Home", root_url %>
+
+  <%= "Message: #{flash[:notice]}" if flash[:notice] %>
+ 
+  <hr />
+ 
+  <h1>
+  <!-- if @user -->
+    <!-- "User: #{@user.name}" %><br /> -->
+    <!-- "IP Address: #{@application_session.ip_address}" %><br /> -->
+    <!-- "Path: #{@application_session.path}" -->
+  <!-- end -->
+  </h1>
+ 
+  <%= yield %>
+				</div> <!-- end main_inner -->
+  			</div> <!-- end content -->
+  		</div> <!-- end twocolwrap -->
+        <div id="register">
+			<div id="reg_inner">
+                <div id="nav_menu">
+    <% if @user %>
+						<ul>
+    						<li><%= link_to "Edit Account", edit_person_path('account') %></li>
+    						<li><%= link_to "Logout", @application_session, :method => :delete %></li>
+						</ul>
+  					<% else %>
+						<ul>
+   							<li><%= link_to "Login", new_session_path %></li>
+    						<li><%= link_to "Register", new_person_path %></li>
+							<li><%= link_to "Help", help_people_path %></li>
+						</ul>
+  					<% end %>  
+    <!-- <ul>
+    <!--<li><!-- link_to "Home", root_url -->
+</div>
+<div class="clearfix"><br /><br /></div>
+				<!-- # :action => "new_tour" -->
+				<%= button_to "New Tour", new_tour_path %>
+			</div> <!-- end of reg_inner -->
+		</div> <!-- end of register -->
+  	</div> <!-- end threecolwrap -->
+	<div id="footer">
+		<p>&copy; 2009 TechTime</p>
+	</div> <!-- end footer -->
+  </div> <!-- end main -->
+</body>
+</html>

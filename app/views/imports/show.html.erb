@@ -1,0 +1,18 @@
+<h2>Results of your CSV Upload</h2>
+
+<% if flash[:notice] -%>
+<div id="notice"><%= flash[:notice] %></div>
+<% end -%>
+
+
+<%= @import.csv.path %>
+
+<% if @import.processed > 0 %>
+
+Success! This import contained <%=  @import.processed %> records
+
+<% else %>
+
+<%= link_to "process", import_proc_path(@import.id) %>
+
+<% end %>

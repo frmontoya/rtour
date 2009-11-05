@@ -1,0 +1,35 @@
+<% if @agent 
+     @property.contact_id = @agent 
+end %>
+<div class="listed-form" style="height:175px;">
+	<%= error_messages_for 'property' %>
+	<h3>Add Listed Properties</h3>
+  <div id="field1">
+    <%= form.label :property_contact_id %>
+    <%= select_tag "property[contact_id]",
+	 %{<option value="">--Select an Agent</option>} +
+         options_from_collection_for_select(@agents, :id, :title_full_name, @property.contact_id.to_i) %>
+    <%= link_to "Add Agent", :controller => 'contacts', :action => 'new', :occupation_id => 607123282  %>
+    <p>
+    <%= form.label :area_id %>    
+    <%= select_tag "property[area_id]", 
+         %{<option value="">--Select an Area</option>} +
+         option_groups_from_collection_for_select(@locations, :areas, :name, :id, :name, @property.area_id) %>
+</p>
+    <% fields_for :property do |property| %>    
+    <%= property.label :mls %>
+    <%= property.text_field :mls %>
+     <%= property.label :price %>
+    <%= property.text_field :price %>
+  </div>
+  <div id="field2">
+	<%= property.label :address %>
+    <%= property.text_area :address, :rows => 4 %>
+  </div>
+    <% end %>
+  <div id="controls">
+    <p>
+    <%= submit_tag "Enter Property", :class => "submit" %>
+    </p>
+  </div>
+</div>

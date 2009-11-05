@@ -1,0 +1,48 @@
+<% if @agent 
+     @tour.agent_contact_id = @agent 
+end %>
+<% if @eofficer
+     @tour.escrow_officer_id = @eofficer 
+ end %>
+<% if @lofficer 
+     @tour.loan_officer_id = @lofficer 
+ end %>
+
+<p>
+    <label for="agent_contact_id">Agent Requested Tour</label>
+    <%= select_tag "agent[contact_id]", 
+         %{<option value="">--Select an Agent</option>} +
+         options_from_collection_for_select(@agents, :id, :title_full_name, @tour.agent_contact_id.to_i) %>
+    <%= link_to "Add Agent", :controller => 'contacts', :action => 'new', :occupation_id => 607123282  %> 
+</p> 
+<p> 
+    <label for="eofficer_contact_id">Escrow Officer</label>
+     <%= select_tag "eofficer[contact_id]", 
+         %{<option value="">--Select an Escrow Officer</option>} +
+         options_from_collection_for_select(@eofficers, :id, :title_full_name, @tour.escrow_officer_id.to_i) %> 
+    <%= link_to "Add Escrow Officer", :controller => 'contacts', :action => 'new', :occupation_id => 119559121 %>
+</p>
+
+<p>
+    <label for="lofficer_contact_id">Loan Officer</label>
+    <%= select_tag "lofficer[contact_id]", 
+         %{<option value="">--Select an Loan Officer</option>} +
+         options_from_collection_for_select(@lofficers, :id, :title_full_name, @tour.loan_officer_id.to_i) %>
+    <%= link_to "Add Escrow Officer", :controller => 'contacts', :action => 'new', :occupation_id => 443816364 %>
+</p>
+<p>
+    <%= form.label :area_id %>    
+    <%= select_tag "tour[area_id]", 
+         %{<option value="">--Select an Area</option>} +
+         option_groups_from_collection_for_select(@locations, :areas, :name, :id, :name, @tour.area_id) %>
+</p>
+<p>
+	<%= form.label :tour_date %>
+	<%= calendar_date_select_tag "tour[tour_date]", @tour.tour_date.to_s, :popup => "force" %>
+</p>
+<p> 
+	<%= form.label :tour_name %>
+    <%= form.text_field :tour_name %>
+</p>
+<%= submit_tag button_label, :class => "submit" %>
+

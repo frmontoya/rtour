@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Real Estate Tours</title>
+<!-- START:stylesheet -->
+  <%= stylesheet_link_tag "tours", :media => "all" %>
+  <%= stylesheet_link_tag "text_n_colors", :media => "all" %>
+  <%= javascript_include_tag :defaults %>
+  <%= calendar_date_select_includes "red" %>
+  <%= javascript_include_tag "niftycube" %>
+  <script type="text/javascript">
+	window.onload=function(){
+		Nifty("div#side,div#content,div#register","medium same-height");
+		Nifty("div#banner,div#addprop,div#footer","medium");
+	}
+</script>
+<!-- END:stylesheet -->
+</head>	
+<body id="tours">
+  <div id="main">
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Realtor Tours" %>
+	<h2>Set Up Your Tours</h2>
+  </div>
+<div id="threecolwrap">
+<div id="twocolwrap">
+  <div id="column">
+    <div id="side">
+		<%= render :partial => "toursetup" %> 
+    </div>
+</div>
+   <div id="content">
+	
+<div id="main_inner">
+      <%= yield :layout %>
+
+</div>
+</div>
+</div>
+<div id="register">
+<div id="reg_inner">
+<form id="form1" method="post" action="">
+          <fieldset>
+          <label for="upload">Upload Contacts</label>
+          <input name="upload" type="text" id="eventid" size="15" />
+		  </fieldset>
+          <input type="button" name="map" id="map" value="Press for Map" />
+          <input type="submit" name="button" id="button" value="Burst" />
+</form>
+
+</div>
+</div>
+</div>
+<div id="addprop" style="background-color:#808073;">
+	<%= render :partial => "add_properties" %> 
+</div>
+<div id="footer">
+<p>&copy; 2009 TechTime</p>
+
+</div>
+</div>
+
+</body>
+
+</html>

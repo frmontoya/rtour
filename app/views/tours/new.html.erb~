@@ -1,0 +1,10 @@
+<%= error_messages_for :tour %>
+ 
+<fieldset>
+  <legend>Tour Set Up</legend>
+ <% form_for :tour, @tour, :url => { :action => "create" } do |form| %>
+  <%= render :partial => 'toursetup', :locals => 
+		{ :button_label => 'Enter Tour', :tour => @tour, :form => 'toursetup' } %>
+    <% end %>
+ 
+</fieldset>

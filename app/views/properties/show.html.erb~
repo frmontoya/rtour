@@ -1,0 +1,28 @@
+<p>
+  <b>Agent:</b> 
+  <!-- @property.contact.title + "" + @property.contact.first_name + " " + @property.contact.mid_init + " " + @property.contact.last_name  -->
+</p>
+
+<p>
+    <b>Area:</b>  
+    <%=h @property.area.name %>
+</p>
+
+<p>
+  <b>MLS:</b>
+  <%=h @property.mls %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @property.price %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @property.address %>
+</p>
+
+
+<%= link_to 'Edit', edit_tour_property_path(@tour) %> |
+<%= link_to 'Back', tour_property_path(@tour) %>

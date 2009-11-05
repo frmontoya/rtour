@@ -1,0 +1,13 @@
+<%= error_messages_for :tour %>
+ 
+<fieldset>
+  <legend>Tour Update</legend>
+    <% form_for @tour do |form| %>
+  <%= render :partial => 'toursetup', :locals => 
+		{ :button_label => 'Update Tour', :tour => @tour, :form => form } %>
+    <% end %> 
+
+</fieldset>
+
+<%= link_to 'Show', @tour %> |
+<%= link_to 'Add Properties', new_tour_property_path(@tour) %>
