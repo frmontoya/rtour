@@ -3,6 +3,7 @@ class PropertiesController < ApplicationController
    before_filter :get_user_contacts
    before_filter :get_selected_contacts, :only => [:new]
    before_filter :retreive_properties
+    before_filter :lookup_geocodes, :only => [:create]
 
    def index
     @properties = Property.find_available_properties
@@ -96,4 +97,19 @@ private
         @properties = Property.paginate_by_tour_id @tour.id, :page => params[:page]
         # @properties = @tours.properties.paginate(:all, :page => params[:page])
     end
+     def lookup_geocodes
+        geocodes = get_geocode params[:property][:address]
+        params[:property][:lat] = geocode[:latitude]
+        params[:property][:lng] = geocode[:longitude]
+    end
+    def get_geocode(address)
+        logger.debug 'starting geocoder call for address: '+address
+        # this is where we call the geocoding web service
+        server = XMLRPC::Client.new2('http://rpc.geocoder.us/service/xmlrpc')
+        result = server.call2('geocode', address)
+        logger.debug "Geocode call: "+result.inspect
+    
+        return {:success=> true, :latitude=> result[1][0]['lat'], 
+		    :longitude=> result[1][0]['long']}
+  end 
 end

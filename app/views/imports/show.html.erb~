@@ -1,5 +1,10 @@
 <h2>Results of your CSV Upload</h2>
 
+<% if flash[:notice] -%>
+<div id="notice"><%= flash[:notice] %></div>
+<% end -%>
+
+
 <%= @import.csv.path %>
 
 <% if @import.processed > 0 %>

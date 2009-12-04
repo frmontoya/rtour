@@ -9,7 +9,8 @@
 
 <% if @import.processed > 0 %>
 
-Success! This import contained <%=  @import.processed %> records
+Success! This import contained <%=  @import.processed %> records<br />
+<%= link_to 'Finished', @import, :confirm => 'Are you sure?', :method => :delete %>
 
 <% else %>
 

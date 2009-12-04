@@ -93,6 +93,7 @@ private
         @agent ||= cookies[:agent]
     end 
     def retreive_properties
-        @properties = @tour.properties.paginate(:all, :page => params[:page])
+        @properties = Property.paginate_by_tour_id @tour.id, :page => params[:page]
+        # @properties = @tours.properties.paginate(:all, :page => params[:page])
     end
 end

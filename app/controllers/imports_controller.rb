@@ -1,3 +1,4 @@
+require 'upload'
 class ImportsController < ApplicationController
     before_filter :ensure_login #protect controller from anonymous users
  
@@ -22,18 +23,30 @@ class ImportsController < ApplicationController
     def show
         @import = Import.find(params[:id])
     end
+
+    def destroy
+        @import = Import.find(params[:id])
+        @import.destroy
+
+         respond_to do |format|
+            format.html { redirect_to(new_import_url) }
+            format.xml  { head :ok }
+        end
+    end
  
     def proc_csv
+	logfile = File.open('/home/frmontoya/Documents/upload.log', 'a')    
+        upload_log = UploadLogger.new(logfile)
         @import = Import.find(params[:id])
         @occupations = Occupation.find(:all)
         lines = parse_csv_file(@import.csv.path)
         lines.shift #comment this line out if your CSV file doesn't contain a header row
         if lines.size > 0
             @import.processed = lines.size
-            lines.each do |line|
+            lines.each_with_index do |line, index|
             case @import.datatype
                 when "contacts"
-                    new_contact(line)
+                    new_contact(index, line, upload_log)
                 end
             end
             @import.save
@@ -60,7 +73,7 @@ private
         lines
      end
  
-     def new_contact(line)
+     def new_contact(recno, line, logger)
         params = Hash.new
         params[:contact] = Hash.new
         params[:contact]["title"] = line[0] || ""
@@ -73,7 +86,10 @@ private
         params[:contact]["occupation_id"] = find_occupation(line[7])
         params[:contact]["person_id"] = @user.id
         @contact = Contact.new(params[:contact])
-        if @contact.save
+        unless @contact.save
+            recno += 2
+            logger.error "line #{recno.to_s}"
+            logger.error @contact.errors.each_full {|msg| logger.format_message('Error:', Time.now, 'Imports', msg)}
         end
     end
 private
